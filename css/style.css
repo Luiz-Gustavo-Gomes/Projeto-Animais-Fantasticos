@@ -244,3 +244,48 @@ body {
         transform: translate3d(0px, 0, 0);
     }
 }
+
+.js-accordion dt {
+    cursor: pointer;
+}
+
+.js-accordion dd {
+    display: none;
+}
+
+.js-accordion dt::after{
+    content: '⬎'; 
+    margin-left: 10px;
+}
+
+.js-accordion dt.ativo::after{
+    content: '⬏';
+}
+
+.js-accordion dd.ativo{
+    display: block;
+    animation: showFaq .5s forwards;
+}
+
+@keyframes showFaq{
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.js-scroll {
+    opacity: 0;
+    transition: .3s;
+    transform: translate3d(-30px, 0, 0);
+}
+
+.js-scroll.ativo {
+    opacity: 1;
+    transition: .3s;
+    transform: translate3d(0, 0, 0);
+}
